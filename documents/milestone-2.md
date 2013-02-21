@@ -93,12 +93,7 @@ https://github.com/EvanPurkhiser/Clocker
 
 ## Project Schedule
 
-Here I've outlined what features I would like to have completed for each of
-the milestones
-
 ### Milestone 3
-
-By this time I would like to have the following completed
 
  * Basic understanding of the Rails framework as well as the Ruby language
  * Basic web application configured and working
@@ -107,8 +102,6 @@ By this time I would like to have the following completed
  * The ability to clock in and clock out and fill in details for an entry
 
 ### Milestone 4
-
-By this time I would like to have the following completed
 
  * The ability to fill out project details and user details
  * Functionality of the HTML and PDF invoice generator
