@@ -2,6 +2,8 @@ Clocker::Application.routes.draw do
 
   root to: 'index#index'
 
+  match 'account/:action', controller: :account
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
