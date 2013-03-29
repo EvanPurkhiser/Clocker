@@ -32,11 +32,16 @@
         </ul>
         {{/user}}
         {{^user}}
-        <form method="post" action="/account/login" class="form-inline pull-right">
-          <input class="input-medium" type="email" name="email" placeholder="Email" />
-          <input class="input-medium" type="password" name="password" placeholder="Password" />
-          <button class="btn btn-inverse" type="submit"><i class="icon-signin"></i></button>
-        </form>
+        <div class="login">
+
+        </div class="login">
+          <form method="post" action="/account/login" class="form-inline pull-right hidden-phone">
+            <input class="input-medium" type="email" name="email" placeholder="Email" />
+            <input class="input-medium" type="password" name="password" placeholder="Password" />
+            <button class="btn btn-inverse" type="submit"><i class="icon-signin"></i></button>
+          </form>
+          <a href="/account/login" class="btn btn-primary pull-right visible-phone">Login</a>
+        </div>
         {{/user}}
       </div>
     </header>
