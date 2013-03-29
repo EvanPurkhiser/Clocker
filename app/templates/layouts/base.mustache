@@ -40,7 +40,14 @@
       </div>
     </header>
 
-
+    <section class="container" id="alerts">
+      {{#alerts}}
+      <div class="alert alert-{{type}}">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <i class="icon-info-sign"></i> {{message}}
+      </div>
+      {{/alerts}}
+    </section>
 
     {{yield}}
 
