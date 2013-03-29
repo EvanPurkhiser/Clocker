@@ -1,5 +1,9 @@
 class Views::Layouts::Base < ActionView::Mustache
 
+  def title
+    "Clocker - Hourly Billing Made Easy"
+  end
+
   def css_asset_path
     stylesheet_path 'screen'
   end
