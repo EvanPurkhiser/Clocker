@@ -11,24 +11,36 @@
     <header>
       <div class="container">
         <h1 class="pull-left">
-          <a href="/" class="muted"><i class="icon-time"></i> Clocker</a>
+          <a href="/"><i class="icon-time"></i> Clocker</a>
         </h1>
 
         {{#user}}
-        <a href="#" class="user-options muted pull-right">
-          <h5 class="name">{{name}} <i class="icon-caret-down"></i></h5>
-          <img class="avatar" src="//gravatar.com/avatar/{{gravatar_id}}?s=24">
-        </a>
+        <ul class="user-options pull-right nav nav-pills">
+          <li class="user">
+            <a href="/profile">
+              <span class="name">{{name}}</span>
+              <img class="avatar" src="//gravatar.com/avatar/{{gravatar_id}}?s=24">
+            </a>
+          </li>
+          <li>
+            <a href="/account/settings" data-toggle="tooltip" data-placement="bottom" title="Account Settings"><i class="icon-cog"></i></a>
+          </li>
+          <li>
+            <a href="/account/logout" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="icon-signout"></i></a>
+          </li>
+        </ul>
         {{/user}}
         {{^user}}
         <form method="post" action="/account/login" class="form-inline pull-right">
           <input class="input-medium" type="text" name="email" placeholder="Email" />
           <input class="input-medium" type="password" name="password" placeholder="Password" />
-          <button class="btn btn-primary" type="submit"><i class="icon-ok"></i></button>
+          <button class="btn btn-inverse" type="submit"><i class="icon-signin"></i></button>
         </form>
         {{/user}}
       </div>
     </header>
+
+
 
     {{yield}}
 
