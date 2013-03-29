@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row-fluid">
+    <div class="span3">
+      <h3>Clocker Signup</h3>
+      <form method="post" action="/account/login">
+        <input class="input-block-level" type="email" name="email" placeholder="Email" value="{{values.email}}" autofocus />
+        <input class="input-block-level" type="password" name="password" placeholder="Password" />
+        <input class="input-block-level" type="password" name="password_confirm" placeholder="Confirm Password" />
+        <p>
+          <small class="muted">We won't email you unless you ask!</small>
+        </p>
+        <button type="submit" class="btn btn-primary">Create Account <i class="icon-ok"></i></button>
+      </form>
+    </div>
+
+    <div class="span8 offset1">
+      <h3>Why should I use Clocker?</h3>
+      <div class="row-fluid">
+        <div class="span4">
+          <h5><i class="icon-heart"></i> No nonsense features</h5>
+          <p>
+            Clocker was designed to be useful a single purpose utility. There are no bloated features and no extra
+            cruft making the application confusing to use. Simplicity is Beauty.
+          </p>
+        </div>
+        <div class="span4">
+          <h5><i class="icon-calendar"></i> Easy Time Tracking</h5>
+          <p>
+            Clocker makes it dead simple to clock in when you start working on a project, and to then later come back to
+            clock out for the day. No fuss, just a simple button click.
+          </p>
+        </div>
+        <div class="span4">
+          <h5><i class="icon-print"></i> PDF Invoice Generator</h5>
+          <p>
+            When you're ready to send out an invoice for your most recent work entries Clocker can generate a beautiful
+            PDF ready to be emailed off to your client.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
