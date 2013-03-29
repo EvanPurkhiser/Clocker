@@ -1,5 +1,13 @@
 class Views::Layouts::Base < ActionView::Mustache
 
+  def css_asset_path
+    stylesheet_path 'screen'
+  end
+
+  def js_asset_path
+    javascript_path 'application'
+  end
+
   # Call the parent_layout render method if a parent_tag is passed
   def method_missing(method, *args, &block)
     return super unless path = parent_tag(method)
