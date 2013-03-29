@@ -13,6 +13,8 @@ class AccountController < ApplicationController
     if @user
       session[:user_id] = @user.id
       redirect_to '/'
+    else
+      @alerts << {:error => 'account.login_failed'}
     end
   end
 
