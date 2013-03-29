@@ -16,8 +16,8 @@ class Views::Layouts::Base < ActionView::Mustache
     return false if ! @user
 
     {
-      :name            => @user.email,
-      :gravatar_id     => Digest::MD5.hexdigest(@user.email),
+      :name        => @user.email,
+      :gravatar_id => Digest::MD5.hexdigest(@user.email),
     }
   end
 
