@@ -6,6 +6,9 @@ class AccountController < ApplicationController
     # Don't let a user login if they're already logged in
     redirect_to '/' if @user
 
+    # Don't do anything if they aren't trying to login
+    return if ! request.post?
+
     # Attempt authentication if credentials were posted
     @user = User.authenticate params[:email], params[:password]
 
