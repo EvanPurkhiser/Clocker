@@ -1,3 +1,3 @@
-class Views::Index < Views::Layouts::Dashboard
+class Views::Index < Views::Layouts::Base
 
 end
