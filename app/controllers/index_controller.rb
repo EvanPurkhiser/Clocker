@@ -1,4 +1,4 @@
-class IndexController < ActionController::Base
+class IndexController < ApplicationController
 
   layout 'layouts/base'
 
