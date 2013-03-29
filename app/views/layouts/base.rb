@@ -12,6 +12,15 @@ class Views::Layouts::Base < ActionView::Mustache
     javascript_path 'application'
   end
 
+  def user
+    return false if ! @user
+
+    {
+      :name            => @user.email,
+      :gravatar_id     => Digest::MD5.hexdigest(@user.email),
+    }
+  end
+
   # Call the parent_layout render method if a parent_tag is passed
   def method_missing(method, *args, &block)
     return super unless path = parent_tag(method)

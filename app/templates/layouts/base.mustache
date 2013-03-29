@@ -14,12 +14,19 @@
           <a href="/" class="muted"><i class="icon-time"></i> Clocker</a>
         </h1>
 
+        {{#user}}
+        <a href="#" class="user-options muted pull-right">
+          <h5 class="name">{{name}} <i class="icon-caret-down"></i></h5>
+          <img class="avatar" src="//gravatar.com/avatar/{{gravatar_id}}?s=24">
+        </a>
+        {{/user}}
+        {{^user}}
         <form method="post" action="/account/login" class="form-inline pull-right">
           <input class="input-medium" type="text" name="email" placeholder="Email" />
           <input class="input-medium" type="password" name="password" placeholder="Password" />
-
           <button class="btn btn-primary" type="submit"><i class="icon-ok"></i></button>
         </form>
+        {{/user}}
       </div>
     </header>
 
