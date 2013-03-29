@@ -21,23 +21,23 @@ module Mustache::Nestable
 
   protected
 
-  # Extracts the template path for a nested template by looking for a name that
-  # matches the syntax
-  #
-  #     parent!/layout/base
-  #
-  # Where anything after the 'parent!' is considered the path to the template
-  #
-  # Returns The template path or nil
-  def parent_tag(name)
-    name.to_s.scan(/^parent!(.*)$/).flatten.first
-  end
+    # Extracts the template path for a nested template by looking for a name that
+    # matches the syntax
+    #
+    #     parent!/layout/base
+    #
+    # Where anything after the 'parent!' is considered the path to the template
+    #
+    # Returns The template path or nil
+    def parent_tag(name)
+      name.to_s.scan(/^parent!(.*)$/).flatten.first
+    end
 
-  # This is a special method that will take the current output buffer and place
-  # it in the yielding section template
-  def parent_layout(options)
-    @_view.view_flow.set :layout, @_view.output_buffer
-    @_view.output_buffer = @_view.render options
-    nil
-  end
+    # This is a special method that will take the current output buffer and place
+    # it in the yielding section template
+    def parent_layout(options)
+      @_view.view_flow.set :layout, @_view.output_buffer
+      @_view.output_buffer = @_view.render options
+      nil
+    end
 end
