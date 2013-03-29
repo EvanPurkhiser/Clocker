@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row-fluid">
+    <div class="span3">
+      <h3>Login to Clocker</h3>
+      <form method="post" action="/account/login">
+        <input class="input-block-level" type="email" name="email" placeholder="Email" value="{{values.email}}" autofocus />
+        <input class="input-block-level" type="password" name="password" placeholder="Password" />
+        <button type="submit" class="btn btn-primary">Login <i class="icon-signin"></i></button>
+      </form>
+    </div>
+
+    <div class="span6 offset2">
+      <h3>Don't have a Clocker account?</h3>
+      <p>
+        Not a problem! We can get you setup with a clocker account in a snap! Soon you'll be clocking in those hours and
+        generating awesome PDF invoices for your clients like a pro!
+      </p>
+      <a href="/account/register" class="btn btn-success">Signup now!</a>
+    </div>
+  </div>
+</div>
