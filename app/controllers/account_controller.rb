@@ -4,7 +4,7 @@ class AccountController < ApplicationController
   # Upon a successfull login the user_id will be stored in the session
   def login
     # Don't let a user login if they're already logged in
-    redirect_to '/' if @user
+    return redirect_to '/' if @user
 
     # Don't do anything if they aren't trying to login
     return if ! request.post?
@@ -15,10 +15,11 @@ class AccountController < ApplicationController
     # Store the user to be loaded for each request
     if @user
       session[:user_id] = @user.id
-      redirect_to '/'
-    else
-      @alerts << {:error => 'account.login_failed'}
+      return redirect_to '/'
     end
+
+    # Authentication failed for the user, bummer
+    @alerts << {:error => 'account.login_failed'}
   end
 
   # Destroy the users current session and send them home
