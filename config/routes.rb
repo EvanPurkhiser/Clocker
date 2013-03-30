@@ -1,6 +1,6 @@
 Clocker::Application.routes.draw do
 
-  root to: 'index#index'
+  root to: 'home#index'
 
   match 'account/:action', controller: :account
 
