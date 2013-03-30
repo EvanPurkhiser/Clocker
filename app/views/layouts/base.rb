@@ -1,7 +1,9 @@
 class Views::Layouts::Base < ActionView::Mustache
 
+  @@title = "Hourly Billing Made Easy"
+
   def title
-    "Clocker - Hourly Billing Made Easy"
+    "Clocker / " + @@title
   end
 
   def css_asset_path
