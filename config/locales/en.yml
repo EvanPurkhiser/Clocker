@@ -2,3 +2,4 @@ en:
   account:
     login_failed: "Authentication failed! Unable to log you in!"
     register_failed: "Oops! There was a problem when creating your account, please fix the highlighted errors and try again."
+    register_success: "Awesome! Your new account is ready to go!"
