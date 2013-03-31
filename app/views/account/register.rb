@@ -1,7 +1,5 @@
 class Views::Account::Register < Views::Layouts::Base
 
-  @@title = "Register"
-
-
+  page_title "Signup for Clocker", :no
 
 end

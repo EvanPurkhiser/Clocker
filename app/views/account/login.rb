@@ -1,6 +1,5 @@
 class Views::Account::Login < Views::Layouts::Base
 
-  @@title = "Login"
+  page_title "Login"
 
 end
-#
