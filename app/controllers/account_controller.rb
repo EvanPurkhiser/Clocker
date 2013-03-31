@@ -3,14 +3,14 @@ class AccountController < ApplicationController
   # Allow a user to login by loading a user with a given username and password.
   # Upon a successfull login the user_id will be stored in the session
   def login
-    # Don't let a user login if they're already logged in
     return redirect_to '/' if @user
 
     # Don't do anything if they aren't trying to login
     return if ! request.post?
 
     # Attempt authentication if credentials were posted
-    @user = User.authenticate params[:email], params[:password]
+    @user  = User.authenticate params[:email], params[:password]
+    @email = params[:email]
 
     # Store the user to be loaded for each request
     if @user
