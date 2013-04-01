@@ -16,8 +16,6 @@ class Views::Layouts::Base < ActionView::Mustache
     self.title = title
   end
 
-  delegate :title, to: :'self.class'
-
   def css_asset_path
     stylesheet_path 'screen'
   end
