@@ -3,10 +3,17 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation
 
-  validates_confirmation_of :password, :on => :create
+  validates :email,
+            :format     => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/,
+            :uniqueness => true,
+            :presence   => true
 
-  validates_presence_of :email
-  validates_uniqueness_of :email
+  validates :password,
+            :length => {:minimum => 8}
+
+  validates :password,
+            :confirmation => true,
+            :on           => :create
 
   # Authenticate a user by a passed email and password.
   #
