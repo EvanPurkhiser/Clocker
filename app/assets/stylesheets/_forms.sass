@@ -1,2 +1,47 @@
 .form-condensed .control-group
   margin-bottom: 0
+
+%floating-error
+  font-size: 12px
+  white-space: nowrap
+  padding: 4px 8px
+  line-height: 20px
+  color: #fff
+  background: #ca453b
+  border-radius: 2px
+  position: absolute
+  bottom: -22px
+  z-index: 2147483644
+
+  &:after
+    content: ""
+    position: absolute
+    border: 6px solid transparent
+    position: absolute
+    border-bottom-color: #ca453b
+    top: -12px
+    left: 10px
+
+.form-popdown-errors
+  .controls
+    position: relative
+
+  .help-inline
+    display: none
+
+  .control-group.error
+    .help-inline,
+      @extend %floating-error
+      bottom: -25px
+
+    input:focus + .help-inline
+      display: block
+
+::-webkit-validation-bubble-message
+  @extend %floating-error
+  -webkit-box-shadow: none
+  border: none
+  top: auto
+
+::-webkit-validation-bubble-icon
+  display: none

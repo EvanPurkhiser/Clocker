@@ -2,10 +2,25 @@
   <div class="row-fluid">
     <div class="span3">
       <h3>Clocker Signup</h3>
-      <form method="post" action="/account/register">
-        <input class="input-block-level" type="email" name="email" placeholder="Email" value="{{attributes.email}}" autofocus />
-        <input class="input-block-level" type="password" name="password" placeholder="Password" />
-        <input class="input-block-level" type="password" name="password_confirmation" placeholder="Confirm Password" />
+      <form method="post" action="/account/register" class="form-condensed form-popdown-errors">
+        <div class="control-group {{#errors.email}}error{{/errors.email}}">
+          <div class="controls">
+            <input type="email" name="email" placeholder="Email" value="{{attributes.email}}" autofocus />
+            <span class="help-inline">{{errors.email}}</span>
+          </div>
+        </div>
+        <div class="control-group {{#errors.password}}error{{/errors.password}}">
+          <div class="controls">
+            <input type="password" name="password" placeholder="Password" />
+            <span class="help-inline">{{errors.password}}</span>
+          </div>
+        </div>
+        <div class="control-group {{#errors.password_confirmation}}error{{/errors.password_confirmation}}">
+          <div class="controls">
+            <input type="password" name="password_confirmation" placeholder="Confirm Password" />
+            <span class="help-inline">{{errors.password_confirmation}}</span>
+          </div>
+        </div>
         <p>
           <small class="muted">We won't email you unless you ask!</small>
         </p>
