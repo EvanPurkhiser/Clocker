@@ -17,7 +17,7 @@ class Views::Layouts::Base < ActionView::Mustache
   end
 
   def css_asset_path
-    stylesheet_path 'screen'
+    stylesheet_path 'application'
   end
 
   def js_asset_path
