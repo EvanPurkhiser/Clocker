@@ -4,11 +4,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
 
   validates :email,
+            :presence   => true,
             :format     => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/,
-            :uniqueness => true,
-            :presence   => true
+            :uniqueness => true
 
   validates :password,
+            :presence => true,
             :length => {:minimum => 8}
 
   validates :password,

@@ -3,3 +3,19 @@ en:
     login_failed: "Authentication failed! Unable to log you in!"
     register_failed: "Oops! There was a problem when creating your account, please fix the highlighted errors and try again."
     register_success: "Awesome! Your new account is ready to go!"
+
+  activerecord:
+    errors:
+      models:
+
+        user:
+          attributes:
+            email:
+              blank: "You're gonna need an email to register your account!"
+              invalid: "Whoa! that doesn't look like an email to me..."
+              taken: "Looks like that email's already in use"
+
+            password:
+              blank: "You're gonna need a password to login!"
+              too_short: "Your password must be at least %{count} characters long"
+              confirmation: "Both this and the confirmation password must match"
