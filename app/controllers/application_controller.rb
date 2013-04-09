@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
       return if @user
 
       @alerts << {:warning => 'account.login_required'}
-      redirect_to controller: :account, action: :login
+      redirect_to '/account/login'
       false
     end
 
