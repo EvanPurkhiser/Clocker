@@ -46,6 +46,7 @@
       </div>
     </header>
 
+    {{#alerts.any?}}
     <section class="container" id="alerts">
       {{#alerts}}
       <div class="alert alert-{{type}}">
@@ -54,6 +55,7 @@
       </div>
       {{/alerts}}
     </section>
+    {{/alerts.any?}}
 
     {{yield}}
 
