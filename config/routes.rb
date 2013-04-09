@@ -1,6 +1,6 @@
 Clocker::Application.routes.draw do
 
-  root to: 'home#index'
+  root to: 'home#home'
 
   # Account settings
   get  'account/settings', to: 'account/settings#index'

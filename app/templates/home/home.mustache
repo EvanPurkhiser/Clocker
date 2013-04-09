@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row-fluid">
-    <div class="span8 jumbotron">
+    <div class="span8 jumbotron {{#user}}offset2 text-center{{/user}}">
       <h1>Hourly billing just got easier.</h1>
       <p class="lead">
         Does keeping track of your time spent on contracted projects involve convoluted excel spreadsheets? Or maybe
@@ -8,6 +8,7 @@
       </p>
       <p class="lead"><strong>Clocker's</strong> here to save you <em>time</em> by keeping track of <em>your time</em>!</p>
     </div>
+    {{^user}}
     <div class="span3 offset1">
       <h3>Ready to clock-in?</h3>
       <form method="post" action="/account/register">
@@ -17,7 +18,7 @@
         <button type="submit" class="btn btn-primary input-block-level">Create Account</button>
       </form>
     </div>
-
+    {{/user}}
   </div>
 
   <hr />
