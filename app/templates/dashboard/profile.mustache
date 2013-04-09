@@ -1,0 +1,38 @@
+<div class="container">
+  <h3>Your Profile Settings <small>These apply to all your projects</small></h3>
+  <hr />
+  <form  class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label">Profile Photo</label>
+      <div class="controls">
+        <img src="//gravatar.com/avatar/{{gravatar_id}}?s=30&amp;d=identicon">
+        <span class="help-inline">
+          <a href="http://gravatar.com">Change on Gravatar.com</a>
+        </span>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Real Name</label>
+      <div class="controls">
+        <input type="text" name="name" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Company Name</label>
+      <div class="controls">
+        <input type="text" name="company" />
+      </div>
+      <div class="controls">
+        <label class="checkbox">
+          <input type="checkbox" name="company_same_as_name" value="1" />
+          Same as my name
+        </label>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Update profile</button>
+    </div>
+  </form>
+</div>
+
