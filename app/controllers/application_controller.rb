@@ -28,4 +28,15 @@ class ApplicationController < ActionController::Base
       super
       @alerts = []
     end
+
+    # Handle authentication checking, redirect them to the login with an alert
+    # if they need to login to access the page
+    def authenticate!
+      return if @user
+
+      @alerts << {:warning => 'account.login_required'}
+      redirect_to controller: :account, action: :login
+      false
+    end
+
 end
