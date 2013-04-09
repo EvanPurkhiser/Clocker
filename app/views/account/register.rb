@@ -5,9 +5,7 @@ class Views::Account::Register < Views::Layouts::Base
   delegate :attributes, to: :@new_user, allow_nil: true
 
   def errors
-    puts @new_user.errors.full_messages
-
-    Hash[@new_user.errors.messages.map { |k, v| [k, v.first] }]
+    Hash[@new_user.errors.messages.map { |k, v| [k, v.first] }] if @new_user
   end
 
 end
