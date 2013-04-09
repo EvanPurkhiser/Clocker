@@ -12,4 +12,7 @@ Clocker::Application.routes.draw do
   # General dashboard actions
   match 'dashboard/:action', controller: :dashboard
 
+  # General home routes
+  match ':action', controller: :home
+
 end
