@@ -10,11 +10,11 @@ class Dashboard::ProjectsController < ApplicationController
     @project = @user.projects.new params[:project]
 
     if ! @project.save
-      @alerts << { :error => 'projects.new.error'}
+      @alerts.push :error => 'projects.new.error'
       return
     end
 
-    @alerts << { :success => 'projects.new.saved' }
+    @alerts.push :success => 'projects.new.saved', :name => @project.name
     redirect_to '/'
   end
 

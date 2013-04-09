@@ -35,7 +35,10 @@ class Views::Layouts::Base < ActionView::Mustache
 
   def alerts
     @alerts.map do |alert|
-      { :type => alert.keys[0].to_s, :message => I18n.t(alert.values[0]) }
+      {
+        :type    => alert.keys[0].to_s,
+        :message => I18n.t(alert.values[0], alert.except(alert.keys[0]))
+      }
     end
   end
 

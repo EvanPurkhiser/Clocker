@@ -7,7 +7,7 @@ en:
 
   projects:
     new:
-      saved: "Your new project has been added!"
+      saved: "%{name} has been added to your list of projects!"
       error: "Oops! There was a problem adding your project. please fix the highlighted errors and try again"
 
 
