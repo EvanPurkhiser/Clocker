@@ -1,0 +1,75 @@
+<div class="container">
+  <h3>Account Settings <small>Manage email and password</small></h3>
+  <hr />
+
+  <div class="row-fluid">
+    <div class="span4">
+      <form method="post" action="/account/settings/change_email" class="form-vertical">
+        <div class="control-group">
+          <label class="control-label">New Email</label>
+          <div class="controls">
+            <input type="text" name="email" />
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Current Password</label>
+          <div class="controls">
+            <input type="password" name="password" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary"><i class="icon-envelope-alt"></i> Change Email</button>
+      </form>
+    </div>
+
+    <div class="span4">
+      <form method="post" action="/account/settings/change_password" class="form-vertical">
+        <div class="control-group">
+          <label class="control-label">New Password</label>
+          <div class="controls">
+            <input type="password" name="password" />
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Confirm Password</label>
+          <div class="controls">
+            <input type="password" name="password" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary"><i class="icon-key"></i> Change Password</button>
+      </form>
+    </div>
+
+    <div class="span4">
+      <h5>I want to delete my account</h5>
+      <p>
+        Not a problem! We dig keeping your virtual life clean and organized. But were not going to
+        keep all of your stuff around. When you delete your account, all of your projects and tracked hours will go
+        poof.
+      </p>
+      <a href="#delete-account-prompt" data-toggle="modal" class="btn btn-danger">
+        <i class="icon-remove-sign"></i> Yes, delete my account
+      </a>
+
+      <div id="delete-account-prompt" class="modal hide fade">
+        <div class="modal-header">
+          <a href="#" class="close" data-dismiss="modal">&times;</a>
+          <h3>Delete my account</h3>
+        </div>
+        <form method="post" action="/account/settings/delete">
+          <div class="modal-body">
+            <p>
+              Well if you're sure... Just type in your password and we'll do it.
+            </p>
+            <input type="password" name="password" class="input-block-level" />
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger">I'm absolutely sure. Delete it!</button>
+            <button class="btn" data-dismiss="modal">No Don't!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
