@@ -1,0 +1,20 @@
+<section class="container">
+  <div class="page-header">
+    <h3>Adding a New Projects</h3>
+  </div>
+
+  <form method="post" class="form-horizontal form-popdown-errors">
+    <div class="control-group {{#errors.name}}error{{/errors.name}}">
+      <label class="control-label">Project Name</label>
+      <div class="controls">
+        <input type="text" name="project[name]" value="{{attributes.name}}" />
+        <span class="help-inline">{{errors.name}}</span>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Create Project</button>
+      <a class="btn pull-right" href="/">Cancel</a>
+    </div>
+  </form>
+</section>

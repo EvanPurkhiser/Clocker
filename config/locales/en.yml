@@ -1,9 +1,16 @@
 en:
   account:
     login_failed: "Authentication failed! Unable to log you in!"
-    register_failed: "Oops! There was a problem when creating your account, please fix the highlighted errors and try again."
+    register_failed: "Oops! There was a problem when creating your account, please fix the highlighted errors and try again"
     register_success: "Awesome! Your new account is ready to go!"
     login_required: "You'll need to login to see that page"
+
+  projects:
+    new:
+      saved: "Your new project has been added!"
+      error: "Oops! There was a problem adding your project. please fix the highlighted errors and try again"
+
+
 
   activerecord:
     errors:
@@ -20,3 +27,8 @@ en:
               blank: "You're gonna need a password to login!"
               too_short: "Your password must be at least %{count} characters long"
               confirmation: "Both this and the confirmation password must match"
+
+        project:
+          attributes:
+            name:
+              blank: "You have to give your project a name!"
