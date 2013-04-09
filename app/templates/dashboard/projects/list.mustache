@@ -1,0 +1,49 @@
+<div class="container">
+
+  <a class="pull-right btn btn-primary" href="/dashboard/projects/new">
+    <i class="icon-plus-sign"></i> Add New Project
+  </a>
+
+  <h3>Current Projects</h3>
+  <hr>
+
+  <table class="table table-bordered table-striped">
+    <colgroup>
+       <col span="1" style="width: 25%;">
+       <col span="1" style="width: 15%;">
+       <col span="1" style="width: 15%;">
+       <col span="1" style="width: 15%;">
+       <col span="1" style="width: 15%;">
+       <col span="1" style="width: 15%;">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Project Name</th>
+        <th class="text-center">Uninvoiced Hours</th>
+        <th class="text-center">Invoiced Hours</th>
+        <th class="text-center">Total Hours</th>
+        <th class="text-center">Total Invoices</th>
+        <th class="text-center">Last Clocked-in</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#projects}}
+      <tr>
+
+      </tr>
+    {{/projects}}
+    {{^projects}}
+      <tr>
+        <td colspan="6">
+          <div class="empty-set">
+            <h4 class="text-center">
+              <span class="muted">You haven't started any projects yet!</span>
+              <a href="/dashboard/projects/new">Add one now!</a>
+            </h4>
+          </div>
+        </td>
+      </tr>
+    {{/projects}}
+    </tbody>
+  </table>
+</div>
