@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  layout 'layouts/base'
+  layout 'base'
 
   before_filter :load_user, :load_alerts
   after_filter  :flash_alerts
