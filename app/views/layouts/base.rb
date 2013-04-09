@@ -9,7 +9,7 @@ class Views::Layouts::Base < ActionView::Mustache
   # can also set the delmiter for the title
   #
   # Returns String
-  def self.page_title(title, with_name = :left, delimiter = '-')
+  def self.page_title(title, with_name = :right, delimiter = '-')
     title = [Clocker::NAME, title].join(" #{delimiter} ") if with_name == :left
     title = [title, Clocker::NAME].join(" #{delimiter} ") if with_name == :right
 
