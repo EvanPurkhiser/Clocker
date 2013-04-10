@@ -1,5 +1,6 @@
 class Dashboard::ProjectsController < ApplicationController
 
+  # List all of the projects
   def list
     @projects = @user.projects.all
   end
