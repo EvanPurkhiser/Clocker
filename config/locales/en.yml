@@ -6,6 +6,10 @@ en:
     register:
       success: "Awesome! Your new account is ready to go!"
       failed: "Oops! There was a problem when creating your account, please fix the highlighted errors and try again"
+    settings:
+      delete:
+        success: "The deed has been done, your account is no more"
+        failed: "The given password didn't match your current password. We didn't delete your account"
 
   projects:
     new:

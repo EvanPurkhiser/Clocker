@@ -2,10 +2,9 @@ class Account::SettingsController < ApplicationController
 
   before_filter :authenticate!
 
-  # Always render the
-  before_filter { render 'account/settings' }
-
-  def index; end
+  def index
+    render 'account/settings'
+  end
 
   # Update the password
   def change_password
@@ -19,7 +18,17 @@ class Account::SettingsController < ApplicationController
 
   # Delete the users account (this requires password confirmation)
   def delete
+    confirmed = !! @user.authenticate(params[:password])
 
+    if confirmed
+      @user.destroy
+      @alerts.push :success => 'account.settings.delete.success'
+      reset_session
+      redirect_to '/'
+    else
+      @alerts.push :notice => 'account.settings.delete.failed'
+      redirect_to action: :index
+    end
   end
 
 end
