@@ -18,7 +18,7 @@ class AccountController < ApplicationController
     end
 
     # Authentication failed for the user, bummer
-    @alerts.push :error => 'account.login_failed'
+    @alerts.push :error => 'account.login.failed'
   end
 
   # Allow the user to register a new account
@@ -29,12 +29,12 @@ class AccountController < ApplicationController
     @new_user = User.new params.slice(:email, :password, :password_confirmation)
 
     if @new_user.save
-      @alerts.push :success => 'account.register_success'
+      @alerts.push :success => 'account.register.success'
       redirect_to :action => 'login'
       return
     end
 
-    @alerts.push :error => 'account.register_failed'
+    @alerts.push :error => 'account.register.failed'
   end
 
   # Destroy the users current session and send them home
