@@ -13,9 +13,11 @@ class User < ActiveRecord::Base
 
   validates :password,
             :presence => true,
-            :length => {:minimum => 8}
+            :length   => { :minimum => 8 },
+            :unless   => "password.nil?"
 
   validates :password,
+            :presence     => true,
             :confirmation => true,
             :on           => :create
 

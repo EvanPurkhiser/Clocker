@@ -1,22 +1,30 @@
 en:
   account:
+
     login:
       failed: "Authentication failed! Unable to log you in!"
       required: "You'll need to login to see that page"
+
     register:
       success: "Awesome! Your new account is ready to go!"
       failed: "Oops! There was a problem when creating your account, please fix the highlighted errors and try again"
+
     settings:
       delete:
         success: "The deed has been done, your account is no more"
-        failed: "The given password didn't match your current password. We didn't delete your account"
+        failed: "The verification password didn't match your current password. We didn't delete your account"
+      email:
+        success: "Your email has been updated, you may now use it to login"
+        failed: "There was a problem changing your email, fix the highlighted error and try again"
+      password:
+        success: "Your password has been changed, don't forget it!"
+        failed: "There was a problem changing your password, fix the highlighted error and try again"
+      confirm_failed: "The verification password didn't match your current password."
 
   projects:
     new:
       saved: "%{name} has been added to your list of projects!"
       error: "Oops! There was a problem adding your project. please fix the highlighted errors and try again"
-
-
 
   activerecord:
     errors:
@@ -25,7 +33,7 @@ en:
         user:
           attributes:
             email:
-              blank: "You're gonna need an email to register your account!"
+              blank: "You'll need an email to login!"
               invalid: "Whoa! that doesn't look like an email to me..."
               taken: "Looks like that email's already in use"
 

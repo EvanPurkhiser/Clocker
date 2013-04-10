@@ -5,17 +5,18 @@
 
   <div class="row-fluid">
     <div class="span4">
-      <form method="post" action="/account/settings/change_email" class="form-vertical">
-        <div class="control-group">
+      <form method="post" action="/account/settings/change_email" class="form-vertical form-popdown-errors">
+        <div class="control-group {{#errors.email}}error{{/errors.email}}">
           <label for="change_email_email" class="control-label">New Email</label>
           <div class="controls">
-            <input type="text" id="change_email_email" name="email" />
+            <input type="email" id="change_email_email" name="email" />
+            <span class="help-inline">{{errors.email}}</span>
           </div>
         </div>
         <div class="control-group">
           <label for="change_email_password" class="control-label">Current Password</label>
           <div class="controls">
-            <input type="password" id="change_email_password" name="password" />
+            <input type="password" id="change_email_password" name="password_confirm" />
           </div>
         </div>
 
@@ -24,17 +25,18 @@
     </div>
 
     <div class="span4">
-      <form method="post" action="/account/settings/change_password" class="form-vertical">
-        <div class="control-group">
+      <form method="post" action="/account/settings/change_password" class="form-vertical form-popdown-errors">
+        <div class="control-group {{#errors.password}}error{{/errors.password}}">
           <label for="change_password_new_password" class="control-label">New Password</label>
           <div class="controls">
             <input type="password" id="change_password_new_password" name="password" />
+            <span class="help-inline">{{errors.password}}</span>
           </div>
         </div>
         <div class="control-group">
           <label for="change_password_password" class="control-label">Current Password</label>
           <div class="controls">
-            <input type="password" id="change_password_password" name="password" />
+            <input type="password" id="change_password_password" name="password_confirm" />
           </div>
         </div>
 
@@ -63,7 +65,7 @@
             <p>
               Well if you're sure... Just type in your password and we'll do it.
             </p>
-            <input type="password" name="password" class="input-block-level" />
+            <input type="password" name="password_confirm" class="input-block-level" />
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-danger">I'm absolutely sure. Delete it!</button>
