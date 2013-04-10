@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_one  :profile
-  has_many :projects
+  has_one  :profile,  dependent: :destroy
+  has_many :projects, dependent: :destroy
 
   attr_accessible :email, :password, :password_confirmation
 
