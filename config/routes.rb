@@ -3,20 +3,33 @@ Clocker::Application.routes.draw do
   root to: 'dashboard/projects#list', constraints: lambda { |r| ! r.session[:user_id].blank? }
   root to: 'home#home'
 
-  # Account settings
-  get  'account/settings', to: 'account/settings#index'
-  post 'account/settings/:action', controller: :'account/settings'
+  # Account management
+  namespace :account do
 
-  # Account registration, login, and logout
-  match 'account/:action', controller: :account
+    # Account settings
+    get  'settings', to: 'settings#index'
+    post 'settings/:action', controller: :settings
 
-  # Project management
-  match 'dashboard/projects(/:action(/:id))',
-    controller: :'dashboard/projects',
-    action:     :list
+    # Account registration, login, and logout
+    match ':action'
+  end
 
-  # General dashboard actions
-  match 'dashboard/:action', controller: :dashboard
+  # Authenticated dashboard routes
+  namespace :dashboard do
+
+    # Project management
+    match 'projects(/:action(/:id))',
+      controller: :projects,
+      action:     :list
+
+    # Entry management
+    match 'project/:project(/:action(/:id))',
+      controller: :entries,
+      action:     :list
+
+    # General dashboard actions
+    match ':action'
+  end
 
   # General home routes
   match ':action', controller: :home
