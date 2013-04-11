@@ -18,18 +18,23 @@
     <tbody>
     {{#entries}}
       <tr>
-        <td class="start-time">{{start_time}}</td>
-        <td class="end-time">{{end_time}}</td>
+        <td class="start-time" title="{{start_time.full}}">{{start_time.short}}</td>
+        <td class="end-time" title="{{end_time.full}}">{{end_time.short}}</td>
         <td class="hours">{{total_hours}}</td>
-        <td class="money-made">${{money_made}}</td>
-        <td class="description">{{description}}</td>
+        <td class="money-made">{{money_made}}</td>
+        <td class="description">
+          {{description}}
+          {{^description}}
+          <small class="muted">No description for this entry</small>
+          {{/description}}
+        </td>
       </tr>
     {{/entries}}
     {{^entries}}
       <tr>
         <td colspan="5">
           <div class="empty-set">
-            <h4 class="text-center muted">You haven't clocked in yet for this project</h4>
+            <h4 class="text-center muted">You haven't clocked in yet for this invoice cycle</h4>
           </div>
         </td>
       </tr>
