@@ -1,8 +1,8 @@
 class Project < ActiveRecord::Base
 
-  has_many :entries, dependent: :destroy
-
   attr_accessible :name, :user_id
+
+  has_many :entries, dependent: :destroy
 
   validates :name, presence: true
 

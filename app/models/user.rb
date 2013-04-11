@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
-  has_secure_password
+
+  attr_accessible :email, :password, :password_confirmation
 
   has_one  :profile,  dependent: :destroy
   has_many :projects, dependent: :destroy
 
-  attr_accessible :email, :password, :password_confirmation
+  has_secure_password
 
   validates :email,
             :presence   => true,
