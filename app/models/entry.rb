@@ -32,7 +32,18 @@ class Entry < ActiveRecord::Base
   end
 
   def seconds
-    ((total_seconds % 1.hour) / 1.minute) % 1.minute
+    total_seconds % 1.minute
+  end
+
+  def humainzed_time
+    secs = total_seconds
+
+    [[60, :second], [60, :minute], [1.0/0, :hour]].map { |count, name|
+      if secs > 0
+        secs, n = secs.divmod(count)
+        "#{n.to_i} #{name.to_s.pluralize(n)}"
+      end
+    }.compact.reverse.to_sentence
   end
 
 end

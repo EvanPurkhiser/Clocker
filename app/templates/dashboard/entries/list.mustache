@@ -4,6 +4,29 @@
     <h3>{{project.name}}</h3>
   </div>
 
+  <div class="timer-control">
+    <div class="row-fluid">
+      <div class="span9 timer-details">
+      {{#pending_entry}}
+        <i class="icon-circle status clocked-in"></i>
+        You've been on the clock for
+        <strong data-seconds="{{seconds}}">{{time_clocked}}</strong> (since {{since.time}} {{since.day}}).
+      {{/pending_entry}}
+      {{^pending_entry}}
+        <i class="icon-circle-blank status clocked-out"></i>
+        It's <strong>{{current_time}}</strong>, ready to clock in?
+      {{/pending_entry}}
+      </div>
+      <div class="span3">
+      {{#pending_entry}}
+        <a href="/dashboard/project/{{project.id}}/clock_out"class="pull-right btn"><i class="icon-ok"></i> Clock Out Now</a>
+      {{/pending_entry}}
+      {{^pending_entry}}
+        <a href="/dashboard/project/{{project.id}}/clock_in" class="pull-right btn btn-primary"><i class="icon-plus"></i> Clock In Now</a>
+      {{/pending_entry}}
+      </div>
+    </div>
+  </div>
 
   <table class="table-entries table table-bordered table-striped">
     <thead>
