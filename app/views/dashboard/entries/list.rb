@@ -40,7 +40,7 @@ class Views::Dashboard::Entries::List < Views::Layouts::Dashboard
       :time_clocked => @pending.humainzed_time,
       :since =>
       {
-        :time => @pending.start_time.strftime('%l:%m %p'),
+        :time => @pending.start_time.strftime('%l:%M %p'),
         :day  => ['Today', 'Yesterday'].fetch((@pending.hours / 24).floor, day),
       },
     }
