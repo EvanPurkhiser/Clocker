@@ -38,12 +38,14 @@ class Entry < ActiveRecord::Base
   def humainzed_time
     secs = total_seconds
 
-    [[60, :second], [60, :minute], [1.0/0, :hour]].map { |count, name|
-      if secs > 0
-        secs, n = secs.divmod(count)
-        "#{n.to_i} #{name.to_s.pluralize(n)}"
-      end
-    }.compact.reverse.to_sentence
+    times = [[60, :second], [60, :minute], [1.0/0, :hour]].map { |count, name|
+      next unless secs > 0
+
+      secs, n = secs.divmod(count)
+      "#{n.to_i} #{name.to_s.pluralize(n)}" unless n.zero?
+    }
+
+    times.compact.reverse.to_sentence(:last_word_connector => ' and ')
   end
 
 end
