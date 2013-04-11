@@ -1,3 +1,6 @@
+//= require underscore.inflection/lib/underscore.js
+//= require underscore.inflection/src/underscore.inflection.js
+
 (function($)
 {
   /**
@@ -14,7 +17,7 @@
    */
   var humanize_time = function(seconds)
   {
-    var increments = [[60, 'seconds'], [60, 'minutes'], [10000, 'hours']]
+    var increments = [[60, 'second'], [60, 'minute'], [10000, 'hour']]
 
     return $.map(increments, function(increment)
     {
@@ -25,7 +28,7 @@
 
       if (remains > 0)
       {
-        return remains + " " + increment[1]
+        return remains + " " + _.pluralize(increment[1], remains)
       }
     }).reverse().join(', ').replace(/,\s([^,]+)$/, ' and $1');
   }

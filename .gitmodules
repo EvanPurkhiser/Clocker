@@ -1,0 +1,3 @@
+[submodule "vendor/assets/javascripts/underscore.inflection"]
+	path = vendor/assets/javascripts/underscore.inflection
+	url = https://github.com/jeremyruppel/underscore.inflection.git
