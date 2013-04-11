@@ -6,6 +6,17 @@ class Dashboard::EntriesController < DashboardController
   # List all uninvoiced and complete entries
   def list
     @entries = @project.entries.uninvoiced.complete.in_order.all
+    @pending = @project.entries.uninvoiced.pending.first
+  end
+
+  def clock_in
+    @project.clock_in
+    redirect_to action: :list
+  end
+
+  def clock_out
+    @project.clock_out params[:entry]
+    redirect_to action: :list
   end
 
 end
