@@ -16,7 +16,23 @@ class Entry < ActiveRecord::Base
 
   # Check if this entry is currently pending completion
   def pending?
-    return end_time.nil?
+    end_time.nil?
+  end
+
+  def total_seconds
+    (end_time or Time.now) - start_time
+  end
+
+  def hours
+    total_seconds / 1.hour
+  end
+
+  def minutes
+    (total_seconds % 1.hour) / 1.minute
+  end
+
+  def seconds
+    ((total_seconds % 1.hour) / 1.minute) % 1.minute
   end
 
 end

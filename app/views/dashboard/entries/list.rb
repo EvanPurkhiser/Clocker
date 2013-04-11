@@ -10,23 +10,19 @@ class Views::Dashboard::Entries::List < Views::Layouts::Dashboard
 
   def entries
     @entries.map do |e|
-      exact_seconds   = (e.end_time - e.start_time)
-      exact_hours     = exact_seconds / 1.hour
-      partial_minutes = ((exact_seconds % 1.hour) / 1.minute).round
-
       {
-        :start_time  =>
+        :start_time =>
         {
           :short => e.start_time.strftime("%e/%m/%y %l:%M %p"),
-          :full  => e.start_time.utc
+          :full  => e.start_time.utc,
         },
-        :end_time  =>
+        :end_time =>
         {
           :short => e.end_time.strftime("%e/%m/%y %l:%M %p"),
-          :full  => e.end_time.utc
+          :full  => e.end_time.utc,
         },
-        :total_hours => "%02d:%02d" % [exact_hours, partial_minutes],
-        :money_made  => number_to_currency(exact_hours * 25)
+        :total_hours => "%02d:%02d" % [e.hours, e.minutes.round],
+        :money_made  => number_to_currency(e.hours * 25),
       }
     end
   end
