@@ -7,6 +7,11 @@ class Dashboard::EntriesController < DashboardController
   def list
     @entries = @project.entries.uninvoiced.complete.in_order.all
     @pending = @project.entries.uninvoiced.pending.first
+
+    respond_to do |format|
+      format.html
+      format.csv { render text: @entries.to_csv(:only => [:start_time, :end_time, :description]) }
+    end
   end
 
   def clock_in
