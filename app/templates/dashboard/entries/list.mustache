@@ -1,0 +1,39 @@
+<section class="container">
+  <div class="page-header">
+    <a href="/dashboard/projects/" class="pull-right page-header-middle"><i class="icon-caret-left"></i> Back to projects</a>
+    <h3>{{project.name}}</h3>
+  </div>
+
+
+  <table class="table-entries table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="start-time">Clocked-in</th>
+        <th class="end-time">Clocked-out</th>
+        <th class="hours">Hours</th>
+        <th class="money-made">Billable</th>
+        <th class="description">Work Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#entries}}
+      <tr>
+        <td class="start-time">{{start_time}}</td>
+        <td class="end-time">{{end_time}}</td>
+        <td class="hours">{{total_hours}}</td>
+        <td class="money-made">${{money_made}}</td>
+        <td class="description">{{description}}</td>
+      </tr>
+    {{/entries}}
+    {{^entries}}
+      <tr>
+        <td colspan="5">
+          <div class="empty-set">
+            <h4 class="text-center muted">You haven't clocked in yet for this project</h4>
+          </div>
+        </td>
+      </tr>
+    {{/entries}}
+    </tbody>
+  </table>
+</section>
