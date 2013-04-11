@@ -7,34 +7,26 @@
     <h3>Current Projects</h3>
   </div>
 
-  <table class="table table-bordered table-striped">
-    <colgroup>
-       <col span="1" style="width: 25%;">
-       <col span="1" style="width: 15%;">
-       <col span="1" style="width: 15%;">
-       <col span="1" style="width: 15%;">
-       <col span="1" style="width: 15%;">
-       <col span="1" style="width: 15%;">
-    </colgroup>
+  <table class="table table-bordered table-striped table-projects">
     <thead>
       <tr>
-        <th>Project Name</th>
-        <th class="text-center">Uninvoiced Hours</th>
-        <th class="text-center">Invoiced Hours</th>
-        <th class="text-center">Total Hours</th>
-        <th class="text-center">Total Invoices</th>
-        <th class="text-center">Last Clocked-in</th>
+        <th class="name">Project Name</th>
+        <th class="uninvoiced-hours">Uninvoiced Hours</th>
+        <th class="invoiced-hours">Invoiced Hours</th>
+        <th class="total-hours">Total Hours</th>
+        <th class="total-invoices">Total Invoices</th>
+        <th class="last-clocked-in">Last Clocked-in</th>
       </tr>
     </thead>
     <tbody>
     {{#projects}}
       <tr>
-        <td><a href="/dashboard/project/{{id}}">{{name}}</a></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>Never</td>
+        <td class="name"><a href="/dashboard/project/{{id}}">{{name}}</a></td>
+        <td class="uninvoiced-hours">0</td>
+        <td class="invoiced-hours">0</td>
+        <td class="total-hours">0</td>
+        <td class="total-invoices">0</td>
+        <td class="last-clocked-in">Never</td>
       </tr>
     {{/projects}}
     {{^projects}}
