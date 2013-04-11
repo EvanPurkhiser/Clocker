@@ -43,7 +43,7 @@
   $.fn.stopwatch = function()
   {
     element   = this
-    startTime = this.data('stopwatch') || 0
+    startTime = this.data('stopwatch') + 1 || 1
 
     setInterval(function()
     {
