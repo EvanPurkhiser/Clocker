@@ -35,7 +35,7 @@ class Views::Dashboard::Entries::List < Views::Layouts::Dashboard
     day = @pending.start_time.strftime('%A')
 
     {
-      :seconds      => @pending.seconds.round,
+      :seconds      => @pending.total_seconds.round,
       :time_clocked => @pending.humainzed_time,
       :since =>
       {
