@@ -25,6 +25,7 @@ class Views::Dashboard::Entries::List < Views::Layouts::Dashboard
         },
         :total_hours => "%02d:%02d" % [e.hours, e.minutes.round],
         :money_made  => number_to_currency(e.hours * 25),
+        :description => e.description,
       }
     end
   end

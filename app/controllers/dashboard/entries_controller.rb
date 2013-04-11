@@ -15,7 +15,7 @@ class Dashboard::EntriesController < DashboardController
   end
 
   def clock_out
-    @project.clock_out params[:entry]
+    @project.clock_out params.extract!(:description)
     redirect_to action: :list
   end
 

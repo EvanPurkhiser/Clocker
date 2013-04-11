@@ -6,20 +6,27 @@
 
   <div class="timer-control">
     <div class="row-fluid">
-      <div class="span9 timer-details">
+      <div class="span12 timer-details">
       {{#pending_entry}}
         <i class="icon-circle status clocked-in"></i>
         You've been on the clock for
-        <strong data-seconds="{{seconds}}">{{time_clocked}}</strong> (since {{since.time}} {{since.day}}).
+        <strong data-stopwatch="{{seconds}}">{{time_clocked}}</strong> (since {{since.time}} {{since.day}}).
       {{/pending_entry}}
       {{^pending_entry}}
         <i class="icon-circle-blank status clocked-out"></i>
         It's <strong>{{current_time}}</strong>, ready to clock in?
       {{/pending_entry}}
-      </div>
-      <div class="span3">
       {{#pending_entry}}
-        <a href="/dashboard/project/{{project.id}}/clock_out"class="pull-right btn"><i class="icon-ok"></i> Clock Out Now</a>
+        <a href="#clock-out-modal"class="pull-right btn" data-toggle="modal"><i class="icon-ok"></i> Clock Out Now</a>
+        <form id="clock-out-modal" class="modal hide fade" method="post" action="/dashboard/project/{{project.id}}/clock_out">
+          <div class="modal-body">
+            <textarea class="input-block-level" id="entry_description" name="description" rows="8"
+              autofocus placeholder="Give a little summary of what you did. Not required"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Clock out of {{project.name}}</button>
+          </div>
+        </form>
       {{/pending_entry}}
       {{^pending_entry}}
         <a href="/dashboard/project/{{project.id}}/clock_in" class="pull-right btn btn-primary"><i class="icon-plus"></i> Clock In Now</a>
