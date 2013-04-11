@@ -26,6 +26,7 @@ class Project < ActiveRecord::Base
   def clock_out(attributes = {})
     raise InvalidProjectState unless clocked_in?
 
+    attributes = {} unless attributes.respond_to?(:merge)
     attributes = attributes.merge :end_time => Time.now
     entries.pending.first.update_attributes(attributes)
     self
