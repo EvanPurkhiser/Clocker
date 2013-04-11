@@ -7,7 +7,7 @@ class Views::Dashboard::Entries::List < Views::Layouts::Dashboard
   end
 
   def current_time
-    Time.now.strftime "%A, %B #{Time.now.day.ordinalize} %Y at %l:%M %p"
+    Time.zone.now.strftime "%A, %B #{Time.now.day.ordinalize} %Y at %l:%M %p"
   end
 
   def pending_entry
